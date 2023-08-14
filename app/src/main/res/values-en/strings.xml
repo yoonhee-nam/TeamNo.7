@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Detail_Page</string>
+    <string name="mainbutton_msg">Go to the main page</string>
+    <string name="mypagebutton_msg">Go to My page</string>
+    <string name="loginbutton_msg">Log-in again</string>
+</resources>
