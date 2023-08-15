@@ -2,11 +2,11 @@ package com.example.team77
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.team77.R
 
-class MainActivity : AppCompatActivity() {
+class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        println("윤희입니다.")
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_signup)
     }
 }
