@@ -102,13 +102,13 @@
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/btngoogle"
         android:layout_width="165dp"
         android:layout_height="50dp"
         android:background="@drawable/googlelogin"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/btnNaver"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSignUp">
 
@@ -135,21 +135,21 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
+        android:id="@+id/btnNaver"
         android:layout_width="165dp"
         android:layout_height="50dp"
         android:background="@drawable/googlelogin"
         android:layout_marginRight="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="@+id/btngoogle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+        app:layout_constraintTop_toTopOf="@+id/btngoogle">
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="114dp"
             android:layout_height="49dp"
             android:gravity="center"
-            android:text="Kakao로 로그인"
+            android:text="Naver로 로그인"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -157,12 +157,12 @@
 
         <ImageView
             android:id="@+id/imageView11"
-            android:layout_width="51dp"
-            android:layout_height="52dp"
+            android:layout_width="58dp"
+            android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/kakao" />
+            app:srcCompat="@drawable/naver" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
