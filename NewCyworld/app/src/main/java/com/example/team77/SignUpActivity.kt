@@ -1,4 +1,4 @@
-package com.example.cyworld7
+package com.example.team77
 
 import android.content.Intent
 import android.graphics.Color

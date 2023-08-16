@@ -1,4 +1,4 @@
-package com.example.cyworld7
+package com.example.team77
 
 import android.app.Activity
 import android.content.Intent
@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.example.cyworld7.R
 import java.util.regex.Pattern
 
 class PasswordActivity : AppCompatActivity() {

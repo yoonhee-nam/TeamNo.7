@@ -1,4 +1,4 @@
-package com.example.cyworld7
+package com.example.team77
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
