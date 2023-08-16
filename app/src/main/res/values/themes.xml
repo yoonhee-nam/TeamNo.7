@@ -5,8 +5,6 @@
         <item name="colorPrimary">#FFA500</item>
         <item name="colorPrimaryVariant">#FFA500</item>
         <item name="colorOnPrimary">@color/white</item>
-
     </style>
-
     <style name="Theme.Team77" parent="Base.Theme.Team77" />
 </resources>

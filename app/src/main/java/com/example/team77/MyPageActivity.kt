@@ -2,6 +2,7 @@ package com.example.team77
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,7 +17,10 @@ class MyPageActivity : AppCompatActivity() {
         "코딩 중 ..", "사랑", "돈벌자!", "행복" ,"반짝반짝"
     )
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
 
@@ -29,6 +33,7 @@ class MyPageActivity : AppCompatActivity() {
         val randomIndex = Random.nextInt(icons.size)
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
+
 
     }
 }
