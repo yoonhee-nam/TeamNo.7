@@ -411,7 +411,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/ccfe24_supermagic"
-                android:text="이름 : 김진아"
+                android:text="이름 : 임주리"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/img2"
