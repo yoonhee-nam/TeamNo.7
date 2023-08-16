@@ -3,7 +3,6 @@ package com.example.team77
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,7 +11,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.example.cyworld7.R
+import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
 
 class PasswordActivity : AppCompatActivity() {
@@ -74,8 +73,8 @@ class PasswordActivity : AppCompatActivity() {
 
                 btnNextTo2Pass.setBackgroundColor(Color.GRAY)
                 btnNextTo2Pass.isEnabled = false
-                    }
             }
+        }
         )
 
 
