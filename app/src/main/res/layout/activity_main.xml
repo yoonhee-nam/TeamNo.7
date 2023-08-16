@@ -32,6 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/txtLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
@@ -86,7 +87,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnMypage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"

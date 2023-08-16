@@ -27,6 +27,9 @@
             android:name=".MainActivity"
             android:exported="false">
         </activity>
+        <activity android:name=".DetailActivity"
+            android:exported="false">
+        </activity>
         <activity android:name=".DoneActivity"
             android:exported="false">
         </activity>
