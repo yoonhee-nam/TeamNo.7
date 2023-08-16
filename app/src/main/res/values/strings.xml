@@ -17,4 +17,10 @@
     <!-- Error messages -->
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>
+
+    <string name="mainbutton_msg">Go to the main page</string>
+    <string name="mypagebutton_msg">Go to My page</string>
+    <string name="loginbutton_msg">Log-in again</string>
+
+
 </resources>
