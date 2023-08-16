@@ -23,8 +23,8 @@ class LogInActivity : AppCompatActivity() {
 
             if (signInId.isNotEmpty() && signPass.isNotEmpty()) {
 
-                val intent = Intent (this, MainActivity::class.java)
-                startActivity(intent)
+//                val intent = Intent (this, MainActivity::class.java)
+//                startActivity(intent)
 
                 Toast.makeText(this,"어서오세요", Toast.LENGTH_SHORT).show()
             } else {

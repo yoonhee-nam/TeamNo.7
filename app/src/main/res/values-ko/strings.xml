@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">team77</string>
+    <string name="mainbutton_msg">메인페이지로 돌아가기</string>
+    <string name="mypagebutton_msg">마이페이지로 돌아가기</string>
+    <string name="loginbutton_msg">다시 로그인 하기</string>
+</resources>
