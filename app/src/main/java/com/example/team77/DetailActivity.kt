@@ -21,3 +21,4 @@ class DetailActivity : AppCompatActivity() {
         image.setImageDrawable(ResourcesCompat.getDrawable(resources, im, null))
     }
 }
+
