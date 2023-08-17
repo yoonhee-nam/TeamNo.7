@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/middle_layout"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="130dp"
         android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -64,7 +64,7 @@
         <ImageView
             android:id="@+id/cr_1"
             android:layout_width="50dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:layout_marginStart="60dp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/ccfe24_supermagic"
             android:text="7조는 뭘로하조?"
             android:textColor="@color/white"
@@ -91,7 +91,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:backgroundTint="#FEFAFD"
             android:fontFamily="@font/ccfe24_supermagic"
@@ -112,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -215,7 +214,8 @@
         android:id="@+id/layout_recomend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:layout_editor_absoluteX="52dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/recomend"
@@ -226,8 +226,8 @@
 
             <ImageView
                 android:id="@+id/dohyun"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:background="@drawable/main_img_cycle"
                 android:clipToOutline="true"
@@ -249,8 +249,8 @@
 
             <ImageView
                 android:id="@+id/jisu"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:background="@drawable/main_img_cycle"
                 android:clipToOutline="true"
@@ -273,8 +273,8 @@
 
             <ImageView
                 android:id="@+id/iu"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:background="@drawable/main_img_cycle"
                 android:clipToOutline="true"
@@ -296,8 +296,8 @@
 
             <ImageView
                 android:id="@+id/jichangwook"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 android:background="@drawable/main_img_cycle"
                 android:clipToOutline="true"
@@ -315,17 +315,18 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/jichangwook"
-                app:layout_constraintStart_toEndOf="@+id/iu"
+                app:layout_constraintStart_toStartOf="@+id/jichangwook"
                 app:layout_constraintTop_toBottomOf="@+id/jichangwook" />
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
-                android:scaleType="centerCrop"
-                android:clipToOutline="true"
+                android:layout_marginEnd="30dp"
                 android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
                 app:layout_constraintStart_toEndOf="@+id/jichangwook"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/hyunjin" />
@@ -338,7 +339,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/imageView7"
-                app:layout_constraintStart_toEndOf="@+id/jichangwook"
+                app:layout_constraintStart_toStartOf="@+id/imageView7"
                 app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -361,13 +362,13 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="350dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/main_bg_orange"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="471dp">
