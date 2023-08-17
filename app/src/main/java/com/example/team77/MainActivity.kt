@@ -11,6 +11,8 @@ import android.widget.TextView
 
 
 class MainActivity : AppCompatActivity() {
+
+    var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,19 +20,26 @@ class MainActivity : AppCompatActivity() {
         val logout = findViewById<TextView>(R.id.txtLogout)
 
         logout.setOnClickListener {
-            intent = Intent( this, LogInActivity ::class.java )
+            val intent = Intent( this, LogInActivity ::class.java )
             startActivity(intent)
         }
 
         val myPage = findViewById<Button>(R.id.btnMypage)
 
         myPage.setOnClickListener {
-            intent = Intent( this, MyPageActivity ::class.java )
+            val intent = Intent( this, MyPageActivity ::class.java )
+            intent.putExtra("AddLikeCount",count)
             startActivity(intent)
+
         }
         val like = findViewById<LinearLayout>(R.id.layout_like)
         like.setOnClickListener(View.OnClickListener {
             like.isSelected = like.isSelected != true
+
+            if(like.isSelected){
+                count = 1
+            }
+            else count = 0
         })
     }
 }

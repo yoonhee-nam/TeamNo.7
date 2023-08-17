@@ -18,7 +18,7 @@ class MyPageActivity : AppCompatActivity() {
     val iconTexts = arrayOf(
         "코딩 중 ..", "사랑", "돈벌자!", "행복" ,"반짝반짝"
     )
-
+    val currentCount = 100
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -41,6 +41,9 @@ class MyPageActivity : AppCompatActivity() {
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
 
-
+        val count = findViewById<TextView>(R.id.like_count)
+        val likeCount = intent.getIntExtra("AddLikeCount",0)
+        val text = currentCount + likeCount
+        count.text = text.toString()
     }
 }
