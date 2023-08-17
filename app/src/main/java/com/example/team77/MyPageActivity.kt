@@ -49,12 +49,6 @@ class MyPageActivity : AppCompatActivity() {
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
 
-
-        val count = findViewById<TextView>(R.id.like_count)
-        val likeCount = intent.getIntExtra("AddLikeCount",0)
-        val text = currentCount + likeCount
-        count.text = text.toString()
-
         count = findViewById(R.id.count)
 
         todayCount++
@@ -72,7 +66,11 @@ class MyPageActivity : AppCompatActivity() {
         var team_text4 = findViewById<ReadMoreTextView>(R.id.team_text4)
         team_text4.text = "단지 널 사랑해~ 이렇게 말했지~ 이제껏 준비했던 많은 말을 뒤로 한채 언제나 니 옆에 있을게 이렇게 약속을 하겠어 저 하늘을 바라다보며 ~ 캔디!"
 
-
+//메인에서 좋아요 버튼 클릭 시 like 1증가
+        val count2 = findViewById<TextView>(R.id.like_count)
+        val likeCount = intent.getIntExtra("AddLikeCount",0)
+        val text = currentCount + likeCount
+        count2.text = text.toString()
 
     }
 }
