@@ -20,6 +20,9 @@ class MyPageActivity : AppCompatActivity() {
         "코딩 중 ..", "사랑", "돈벌자!", "행복" ,"반짝반짝"
     )
 
+    val currentCount = 100
+
+
     var todayCount = 0
     lateinit var count: TextView // 지연초기화
 
@@ -46,6 +49,12 @@ class MyPageActivity : AppCompatActivity() {
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
 
+
+        val count = findViewById<TextView>(R.id.like_count)
+        val likeCount = intent.getIntExtra("AddLikeCount",0)
+        val text = currentCount + likeCount
+        count.text = text.toString()
+
         count = findViewById(R.id.count)
 
         todayCount++
@@ -62,6 +71,7 @@ class MyPageActivity : AppCompatActivity() {
 
         var team_text4 = findViewById<ReadMoreTextView>(R.id.team_text4)
         team_text4.text = "단지 널 사랑해~ 이렇게 말했지~ 이제껏 준비했던 많은 말을 뒤로 한채 언제나 니 옆에 있을게 이렇게 약속을 하겠어 저 하늘을 바라다보며 ~ 캔디!"
+
 
 
     }
