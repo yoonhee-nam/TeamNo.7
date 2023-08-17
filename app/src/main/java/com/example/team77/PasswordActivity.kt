@@ -36,7 +36,7 @@ class PasswordActivity : AppCompatActivity() {
                 val pw1 = signUp2Id.text.toString()
                 val pw2 = editable.toString()
                 val pattern = Pattern.compile(pwPattern)
-                var matcher = pattern.matcher(pw1)
+                val matcher = pattern.matcher(pw1)
 
                 if (matcher.matches()){
                     textView6.text = "안전한 비밀번호입니다."

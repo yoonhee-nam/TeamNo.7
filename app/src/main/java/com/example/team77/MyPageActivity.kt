@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import com.example.team77.member.RebaseActivity
 import kotlin.random.Random
 
 class MyPageActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ class MyPageActivity : AppCompatActivity() {
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
 
+        val setting = findViewById<Button>(R.id.btnsetting)
+        setting.setOnClickListener {
+            intent = Intent(this, RebaseActivity:: class.java)
+            startActivity(intent)
+        }
 
     }
 }
