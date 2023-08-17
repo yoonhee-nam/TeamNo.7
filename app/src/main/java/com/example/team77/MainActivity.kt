@@ -10,16 +10,21 @@ import android.widget.LinearLayout
 import android.widget.TextView
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     var count = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        showtoast("싸이월드에 오신걸 환영합니다.")
+
+
         val logout = findViewById<TextView>(R.id.txtLogout)
 
         logout.setOnClickListener {
+
             val intent = Intent( this, LogInActivity ::class.java )
             startActivity(intent)
         }
@@ -27,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         val myPage = findViewById<Button>(R.id.btnMypage)
 
         myPage.setOnClickListener {
+
             val intent = Intent( this, MyPageActivity ::class.java )
             intent.putExtra("AddLikeCount",count)
             startActivity(intent)

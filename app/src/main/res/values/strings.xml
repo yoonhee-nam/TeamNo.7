@@ -21,6 +21,12 @@
     <string name="mainbutton_msg">Go to the main page</string>
     <string name="mypagebutton_msg">Go to My page</string>
     <string name="loginbutton_msg">Log-in again</string>
+    <string name="naver_text">Connect with Naver</string>
+    <string name="google_text">Connect with Google</string>
+    <string name="login_text">LOGIN</string>
+    <string name="sign_up_text">SIGN UP</string>
+    <string name="email_text">Email address</string>
+    <string name="password_text">Password</string>
 
 
 </resources>

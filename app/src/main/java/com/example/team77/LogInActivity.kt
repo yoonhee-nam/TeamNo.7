@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 
-class LogInActivity : AppCompatActivity() {
+class LogInActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -21,24 +22,18 @@ class LogInActivity : AppCompatActivity() {
         idText.setText(idData)
         passText.setText(passData)
 
-        val sign_in_id = findViewById<EditText>(R.id.loginEmail)
-        val sign_in_pass = findViewById<EditText>(R.id.logInpass)
-
-
         val btn1 = findViewById<Button>(R.id.btnLogin)
         btn1.setOnClickListener {
-            val signInId = sign_in_id.text.toString()
-            val signPass = sign_in_pass.text.toString()
+            val signInId = idText.text.toString()
+            val signPass = passText.text.toString()
 
             if (signInId.isNotEmpty() && signPass.isNotEmpty()) {
 
-                val intent = Intent (this, MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
-                Toast.makeText(this,"싸이월드에 오신걸 환영합니다.", Toast.LENGTH_SHORT).show()
             } else {
-
-                Toast.makeText(this, "아이디, 비밀번호를 확인하세요", Toast.LENGTH_SHORT).show()
+                showtoast("입력되지 않은 정보가 있습니다.")
             }
         }
 
@@ -51,13 +46,15 @@ class LogInActivity : AppCompatActivity() {
 
         val btngoogle = findViewById<ConstraintLayout>(R.id.btngoogle)
         btngoogle.setOnClickListener {
-            val address = "https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&hl=ko&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-1089772944%3A1692081081985953"
+            val address =
+                "https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fwww.google.com%2F&ec=GAlAmgQ&hl=ko&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-1089772944%3A1692081081985953"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(address))
             startActivity(intent)
 
             val btnNaver = findViewById<ConstraintLayout>(R.id.btnNaver)
             btnNaver.setOnClickListener {
-                val address = "https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/"
+                val address =
+                    "https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/"
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(address))
                 startActivity(intent)
             }
