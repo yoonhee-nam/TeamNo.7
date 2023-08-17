@@ -7,22 +7,25 @@ import android.widget.Button
 import android.widget.TextView
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        showtoast("싸이월드에 오신걸 환영합니다.")
+
+
         val logout = findViewById<TextView>(R.id.txtLogout)
 
         logout.setOnClickListener {
-            intent = Intent( this, LogInActivity ::class.java )
+            intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
         }
 
         val myPage = findViewById<Button>(R.id.btnMypage)
 
         myPage.setOnClickListener {
-            intent = Intent( this, MyPageActivity ::class.java )
+            intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
         }
 

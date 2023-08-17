@@ -198,12 +198,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/miniroom" />
 
+        <ImageView
+            android:id="@+id/miniroompng"
+            android:layout_width="364dp"
+            android:layout_height="171dp"
+            android:src="@drawable/miniroom"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_icon_text2"/>
+
         <Button
             android:id="@+id/miniroom"
             android:layout_width="364dp"
             android:layout_height="171dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="@color/button"
             android:fontFamily="@font/neodgm"
             android:text="미니룸 들어가기"
             android:textColor="#070707"
@@ -432,6 +442,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/today_icon_text3"
             app:srcCompat="@drawable/two" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

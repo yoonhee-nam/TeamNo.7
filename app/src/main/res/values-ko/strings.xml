@@ -4,4 +4,10 @@
     <string name="mainbutton_msg">메인페이지로 돌아가기</string>
     <string name="mypagebutton_msg">마이페이지로 돌아가기</string>
     <string name="loginbutton_msg">다시 로그인 하기</string>
+    <string name="naver_text">Naver로 로그인</string>
+    <string name="google_text">Google로 로그인</string>
+    <string name="login_text">로그인</string>
+    <string name="sign_up_text">회원가입</string>
+    <string name="email_text">이메일을 입력하세요.</string>
+    <string name="password_text">비밀번호를 입력하세요.</string>
 </resources>
