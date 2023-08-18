@@ -47,7 +47,7 @@ class DB(context: Context, emailname: String) : SQLiteOpenHelper(context, emailn
         val columnIndex = result.getColumnIndex("EMAIL")
 
         while (result.moveToNext()) {
-            str += result.getString(columnIndex)
+            str = result.getString(columnIndex)
         }
 
         if (str == "") {
@@ -91,23 +91,23 @@ class DB(context: Context, emailname: String) : SQLiteOpenHelper(context, emailn
         return cursor.count > 0
     }
 
-    fun logIn(email: String): Boolean {
-        val db = this.readableDatabase
-
-        val projection = arrayOf("EMAIL") // 컬럼 이름 변경
-        val selection = "EMAIL = ?"
-        val selectionArgs = arrayOf(email) // 일단 비밀번호까지를 함께 검사하도록 가정
-
-        val cursor = db.query(
-            "MEMBER",   // 테이블
-            projection, // 리턴 받고자 하는 컬럼
-            selection,  // where 조건
-            selectionArgs,  // where 조건에 해당하는 값의 배열
-            null,       // 그룹 조건
-            null,       // having 조건
-            null        // orderby 조건 지정
-        )
-
-        return cursor.count > 0
-    }
+//    fun logIn(email: String): Boolean {
+//        val db = this.readableDatabase
+//
+//        val projection = arrayOf("EMAIL") // 컬럼 이름 변경
+//        val selection = "EMAIL = ?"
+//        val selectionArgs = arrayOf(email) // 일단 비밀번호까지를 함께 검사하도록 가정
+//
+//        val cursor = db.query(
+//            "MEMBER",   // 테이블
+//            projection, // 리턴 받고자 하는 컬럼
+//            selection,  // where 조건
+//            selectionArgs,  // where 조건에 해당하는 값의 배열
+//            null,       // 그룹 조건
+//            null,       // having 조건
+//            null        // orderby 조건 지정
+//        )
+//
+//        return cursor.count > 0
+//    }
 }
