@@ -14,18 +14,18 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
 
-class SignUpActivity : AppCompatActivity() {
+class SignUpActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
 
-        val emailId = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                result ->
-            if (result.resultCode == RESULT_OK){
-                val data: Intent? = result.data
-                val signUpId = data?.getStringExtra("dataFromSignUpId")
+        val emailId =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val data: Intent? = result.data
+                    val signUpId = data?.getStringExtra("dataFromSignUpId")
+                }
             }
-        }
 
         // 이제 emailId 변수에 데이터가 들어있음
 
@@ -57,26 +57,25 @@ class SignUpActivity : AppCompatActivity() {
                 btnNextToPass.setBackgroundColor(Color.GRAY)
                 btnNextToPass.isEnabled = false
             }
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 btnNextToPass.setBackgroundColor(Color.GRAY)
                 btnNextToPass.isEnabled = false
             }
         }
         )
 
-        val btn = findViewById<Button>(R.id.btnNextToPass)
-        btn.setOnClickListener {
+        btnNextToPass.setOnClickListener {
             val signUpId = sign_up_id.text.toString()
 
             if (signUpId.isNotEmpty()) {
 
-                val intent = Intent(this, PasswordActivity:: class.java)
-                intent.putExtra("dataFromSignUpId",signUpId)
+                val intent = Intent(this, PasswordActivity::class.java)
+                intent.putExtra("dataFromSignUpId", signUpId)
                 emailId.launch(intent)
                 startActivity(intent)
             } else {
-                Toast.makeText(this, "이메일을 다시 입력해 주세요", Toast.LENGTH_SHORT).show()
+                showtoast(getString(R.string.toast_try))
             }
         }
     }

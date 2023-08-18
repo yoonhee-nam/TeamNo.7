@@ -3,11 +3,11 @@
 
     <item android:state_pressed="false">
         <shape android:shape="rectangle">
-            <corners android:radius="30dp"/>
+            <corners android:radius="50dp"/>
             <gradient
-                android:startColor="@color/blue2"
-                android:centerColor="@color/blue"
-                android:endColor="@color/blue2"/>
+                android:startColor="@color/button"
+                android:centerColor="#80FFB700"
+                android:endColor="#65FF8C9D"/>
         </shape>
     </item>
 

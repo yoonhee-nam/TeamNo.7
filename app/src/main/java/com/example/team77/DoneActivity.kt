@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-    class DoneActivity : AppCompatActivity() {
+    class DoneActivity : BaseActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_done)
+
+            showtoast(getString(R.string.toast_wc))
 
             val signUpId = intent.getStringExtra("dataFromSignUpId")
             val signUpPassValue = intent.getStringExtra("dataFromSignUpPass")

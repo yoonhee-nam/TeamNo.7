@@ -13,7 +13,7 @@ import kr.co.prnd.readmore.ReadMoreTextView
 import kotlin.random.Random
 
 
-class MyPageActivity : AppCompatActivity() {
+class MyPageActivity : BaseActivity() {
 
     val icons = arrayOf(
         R.drawable.computer, R.drawable.love, R.drawable.money, R.drawable.smile, R.drawable.star
@@ -57,8 +57,7 @@ class MyPageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val message = "당신의 가능성에 코딩을 곱해보세요. \n 스파르타 코딩클럽"
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        showtoast(getString(R.string.toast_youcan))
 
         var iconImage = findViewById<ImageView>(R.id.icon)
         var iconText = findViewById<TextView>(R.id.icon_text)

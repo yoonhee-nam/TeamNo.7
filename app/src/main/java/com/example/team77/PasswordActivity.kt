@@ -14,7 +14,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import java.util.regex.Pattern
 
-class PasswordActivity : AppCompatActivity() {
+class PasswordActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password)
@@ -100,7 +100,7 @@ class PasswordActivity : AppCompatActivity() {
                 intent.putExtra("dataFromSignUpId",signUpId)
                 signUpPass.launch(intent) // 이 부분을 삭제하지 않음
             } else {
-                Toast.makeText(this, "비밀번호를 다시 입력해 주세요", Toast.LENGTH_SHORT).show()
+                showtoast("비밀번호를 다시 입력해 주세요.")
             }
         }
 

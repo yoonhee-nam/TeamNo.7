@@ -33,7 +33,7 @@ class LogInActivity : BaseActivity() {
                 startActivity(intent)
 
             } else {
-                showtoast("입력되지 않은 정보가 있습니다.")
+                showtoast(getString(R.string.toast_noinform_text))
             }
         }
 

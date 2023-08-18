@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        showtoast("싸이월드에 오신걸 환영합니다.")
+        showtoast(getString(R.string.toast_wcto_text))
 
 
         val logout = findViewById<TextView>(R.id.txtLogout)

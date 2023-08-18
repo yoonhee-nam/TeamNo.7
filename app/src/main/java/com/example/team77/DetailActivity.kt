@@ -7,10 +7,12 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.content.res.ResourcesCompat
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail_activity)
+
+        showtoast(getString(R.string.toast_wc))
 
         val mainbt = findViewById<Button>(R.id.mainbutton)
         mainbt.setOnClickListener{
