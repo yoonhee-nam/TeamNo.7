@@ -7,9 +7,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+
+import com.example.team77.member.SearchActivity
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageButton
 import kr.co.prnd.readmore.ReadMoreTextView
+
 import kotlin.random.Random
 
 
@@ -66,6 +70,15 @@ class MyPageActivity : AppCompatActivity() {
         val randomIndex = Random.nextInt(icons.size)
         iconImage.setImageResource(icons[randomIndex])
         iconText.text = iconTexts[randomIndex]
+
+
+        val setting = findViewById<Button>(R.id.btnsetting)
+        setting.setOnClickListener {
+
+
+            intent = Intent(this, SearchActivity:: class.java)
+            startActivity(intent)
+        }
 
         count = findViewById(R.id.count)
 

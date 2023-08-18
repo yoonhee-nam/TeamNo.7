@@ -1,5 +1,6 @@
 package com.example.team77
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -12,6 +13,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.team77.member.DB
+import com.example.team77.member.Member
+
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
@@ -26,6 +30,7 @@ class SignUpActivity : AppCompatActivity() {
                 val signUpId = data?.getStringExtra("dataFromSignUpId")
             }
         }
+
 
         // 이제 emailId 변수에 데이터가 들어있음
 
@@ -45,6 +50,7 @@ class SignUpActivity : AppCompatActivity() {
                     textView5.setTextColor(Color.WHITE)
                     btnNextToPass.setBackgroundColor(Color.parseColor("#FF5722"))
                     btnNextToPass.isEnabled = true
+
                 } else {
                     textView5.text = "올바른 이메일을 입력해 주세요."
                     textView5.setTextColor(Color.RED)
@@ -71,6 +77,11 @@ class SignUpActivity : AppCompatActivity() {
 
             if (signUpId.isNotEmpty()) {
 
+
+                val mem = Member(sign_up_id.text.toString().trim())
+                val dbHelper = DB.getInstance(this, "member.db")
+                dbHelper.insert(mem)
+
                 val intent = Intent(this, PasswordActivity:: class.java)
                 intent.putExtra("dataFromSignUpId",signUpId)
                 emailId.launch(intent)
@@ -80,5 +91,4 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
     }
-
 }
