@@ -22,6 +22,11 @@ class SearchActivity : AppCompatActivity() {
         val findBtn = findViewById<Button>(R.id.findBtn)
         var revise = findViewById<Button>(R.id.revise)
         val delete = findViewById<Button>(R.id.delete)
+        val btnBack = findViewById<Button>(R.id.btnBack)
+
+        btnBack.setOnClickListener {
+            finish()
+        }
 
 
         findBtn.setOnClickListener {
