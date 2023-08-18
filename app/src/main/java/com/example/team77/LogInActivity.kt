@@ -39,6 +39,8 @@ class LogInActivity : BaseActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
 
+                overridePendingTransition(R.anim.up_fade_in,R.anim.up_fade_out)
+
             } else {
                 showtoast("입력되지 않은 정보가 있습니다.")
             }
@@ -49,6 +51,8 @@ class LogInActivity : BaseActivity() {
         btn2.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+
+            overridePendingTransition(R.anim.down_faid_in,R.anim.down_fade_out)
         }
 
         val btngoogle = findViewById<ConstraintLayout>(R.id.btngoogle)

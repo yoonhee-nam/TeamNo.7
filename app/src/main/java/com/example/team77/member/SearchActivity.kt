@@ -26,6 +26,7 @@ class SearchActivity : AppCompatActivity() {
 
         btnBack.setOnClickListener {
             finish()
+            overridePendingTransition(R.anim.left_fade_in,R.anim.left_fade_out)
         }
 
 
@@ -52,6 +53,7 @@ class SearchActivity : AppCompatActivity() {
             val message = "수정되었습니다."
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             finish()
+            overridePendingTransition(R.anim.left_fade_in,R.anim.left_fade_out)
         }
 
         delete.setOnClickListener {
@@ -84,6 +86,7 @@ class SearchActivity : AppCompatActivity() {
             val alertDialog = alertDialogBuilder.create()
 
             alertDialog.show() // AlertDialog 표시
+
 }
     }
 }
