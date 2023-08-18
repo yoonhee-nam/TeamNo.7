@@ -42,7 +42,7 @@ class LogInActivity : BaseActivity() {
                 overridePendingTransition(R.anim.up_fade_in,R.anim.up_fade_out)
 
             } else {
-                showtoast("입력되지 않은 정보가 있습니다.")
+                showtoast(getString(R.string.toast_noinform_text))
             }
         }
 

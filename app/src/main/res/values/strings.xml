@@ -1,32 +1,31 @@
 <resources>
     <string name="app_name">team77</string>
-    <string name="title_activity_main2">Leanback MainActivity2</string>
-    <string name="browse_title">Videos by Your Company</string>
-    <string name="related_movies">Related Videos</string>
-    <string name="grid_view">Grid View</string>
-    <string name="error_fragment">Error Fragment</string>
-    <string name="personal_settings">Personal Settings</string>
-    <string name="watch_trailer_1">Watch trailer</string>
-    <string name="watch_trailer_2">FREE</string>
-    <string name="rent_1">Rent By Day</string>
-    <string name="rent_2">From $1.99</string>
-    <string name="buy_1">Buy and Own</string>
-    <string name="buy_2">AT $9.99</string>
-    <string name="movie">Movie</string>
-
-    <!-- Error messages -->
-    <string name="error_fragment_message">An error occurred</string>
-    <string name="dismiss_error">Dismiss</string>
 
     <string name="mainbutton_msg">Go to the main page</string>
     <string name="mypagebutton_msg">Go to My page</string>
     <string name="loginbutton_msg">Log-in again</string>
-    <string name="naver_text">Connect with Naver</string>
-    <string name="google_text">Connect with Google</string>
+    <string name="naver_text">Naver</string>
+    <string name="google_text">Google</string>
     <string name="login_text">LOGIN</string>
     <string name="sign_up_text">SIGN UP</string>
     <string name="email_text">Email address</string>
     <string name="password_text">Password</string>
+    <string name="done_text">★Thank you for joining us★</string>
+    <string name="ment_text">Welcome to Cyworld. \n Log in now and meet the new Cyworld.</string>
+    <string name="next_text">NEXT</string>
+    <string name="repeat_password_text">Repeat Password</string>
+    <string name="pwment_text">Please set a password with a combination of 8 to 20 English characters and special characters.</string>
+    <string name="pwenter_text">Enter your password</string>
+    <string name="email_id_enter_text">Enter your Email address</string>
+    <string name="id_ment_text">Please enter an email address \n to use as your ID.</string>
+    <string name="seven_text">7조는 뭘로하조?</string>
+    <string name="my_page_text">Go to MY PAGE</string>
+    <string name="todaynumber">10</string>
+    <string name="toast_noinform_text">There is information you have not entered.</string>
+    <string name="toast_wc">★Welcome!★</string>
+    <string name="toast_wcto_text">Welcome to Cyworld.</string>
+    <string name="toast_youcan">Multiply your possibilities with coding. \n Sparta Coding Club</string>
+    <string name="toast_try">" Please re-enter your email."</string>
 
 
 </resources>

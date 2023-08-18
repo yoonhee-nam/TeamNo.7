@@ -105,7 +105,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btngoogle"
         android:layout_width="165dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/googlelogin"
         app:layout_constraintEnd_toStartOf="@+id/btnNaver"
@@ -116,7 +116,7 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="110dp"
-            android:layout_height="50dp"
+            android:layout_height="0dp"
             android:layout_marginEnd="5dp"
             android:gravity="center"
             android:text="@string/google_text"
@@ -128,8 +128,9 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="51dp"
-            android:layout_height="52dp"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -140,7 +141,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btnNaver"
         android:layout_width="165dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_marginStart="10dp"
         android:background="@drawable/googlelogin"
         app:layout_constraintBottom_toBottomOf="@+id/btngoogle"
@@ -151,8 +152,9 @@
         <TextView
             android:id="@+id/textView11"
             android:layout_width="110dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="3dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="3dp"
             android:gravity="center"
             android:text="@string/naver_text"
             android:textStyle="bold"
@@ -163,8 +165,9 @@
 
         <ImageView
             android:id="@+id/imageView11"
-            android:layout_width="65dp"
-            android:layout_height="75dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
