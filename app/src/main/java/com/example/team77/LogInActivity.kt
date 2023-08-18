@@ -35,16 +35,19 @@ class LogInActivity : BaseActivity() {
             val pattern2 = Pattern.compile(pwPattern)
             val matcher = pattern2.matcher(signPass)
 
+
             if (emailId.isNotEmpty() && signPass.isNotEmpty() && pattern.matcher(emailId).matches() && matcher.matches()) {
                 val db = DB.getInstance(this, "your_email_name_here")
                 if (db.checkIdExist(emailId)) {
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.up_fade_in,R.anim.up_fade_out)
                 } else {
                     showtoast("존재하지 않는 계정입니다.")
                 }
+
             } else {
-                showtoast("입력되지 않은 정보가 있습니다.")
+                showtoast(getString(R.string.toast_noinform_text))
             }
         }
 
@@ -53,6 +56,8 @@ class LogInActivity : BaseActivity() {
         btn2.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+
+            overridePendingTransition(R.anim.down_faid_in,R.anim.down_fade_out)
         }
 
         val btngoogle = findViewById<ConstraintLayout>(R.id.btngoogle)
