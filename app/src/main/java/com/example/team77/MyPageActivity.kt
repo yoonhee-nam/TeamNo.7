@@ -55,6 +55,8 @@ class MyPageActivity : AppCompatActivity() {
         miniroom.setOnClickListener {
             intent = Intent(this, DetailActivity::class.java)
             startActivity(intent)
+
+            overridePendingTransition(R.anim.up_fade_in,R.anim.up_fade_out)
         }
 
         val message = "당신의 가능성에 코딩을 곱해보세요. \n 스파르타 코딩클럽"
