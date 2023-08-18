@@ -6,23 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".member.SearchActivity">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="회원 정보 수정"
+        android:textColor="@color/orange"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/searchnameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이메일을확인"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="수정하실 이메일을 적어주세요."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/findBtn"
-        android:layout_width="120dp"
-        android:layout_height="73dp"
-        android:text="회원검색"
+        android:layout_width="137dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:text="이메일확인"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTxtname" />
@@ -40,40 +52,42 @@
         android:id="@+id/editTxtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
+        android:hint="이메일주소"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintTop_toBottomOf="@+id/searchnameTxt" />
 
     <Button
         android:id="@+id/revise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="수정"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/delete" />
-
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="삭제"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="156dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="수정하기"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewinfo" />
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/alertTitle"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:text="TextView"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/textViewinfo" />-->
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="156dp"
+        android:layout_height="56dp"
+        android:layout_marginRight="30dp"
+        android:text="회원 탈퇴"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/revise" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="356dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:text="뒤로 가기"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/revise" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

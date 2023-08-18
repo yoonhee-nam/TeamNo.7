@@ -72,7 +72,7 @@ class MyPageActivity : AppCompatActivity() {
         iconText.text = iconTexts[randomIndex]
 
 
-        val setting = findViewById<Button>(R.id.btnsetting)
+        val setting = findViewById<ImageView>(R.id.btnsetting)
         setting.setOnClickListener {
 
 
