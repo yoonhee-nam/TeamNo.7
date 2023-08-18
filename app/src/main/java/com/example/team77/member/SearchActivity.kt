@@ -20,8 +20,8 @@ class SearchActivity : AppCompatActivity() {
         val editTxtname = findViewById<EditText>(R.id.editTxtname)
         val textViewinfo = findViewById<TextView>(R.id.textViewinfo)
         val findBtn = findViewById<Button>(R.id.findBtn)
-        var tnwjd = findViewById<Button>(R.id.tnwjd)
-        val tkrwp = findViewById<Button>(R.id.tkrwp)
+        var revise = findViewById<Button>(R.id.revise)
+        val delete = findViewById<Button>(R.id.delete)
 
 
         findBtn.setOnClickListener {
@@ -35,7 +35,7 @@ class SearchActivity : AppCompatActivity() {
 
         }
 
-        tnwjd.setOnClickListener {
+        revise.setOnClickListener {
 
             val email = editTxtname.text.toString().trim()
 
@@ -49,7 +49,7 @@ class SearchActivity : AppCompatActivity() {
             finish()
         }
 
-        tkrwp.setOnClickListener {
+        delete.setOnClickListener {
             val alertDialogBuilder = AlertDialog.Builder(this)
                 .setTitle("경고") // 다이얼로그 타이틀 설정
                 .setMessage("정말 삭제하시겠습니까? 삭제시 앱은 종료됩니다.") // 다이얼로그 메시지 설정

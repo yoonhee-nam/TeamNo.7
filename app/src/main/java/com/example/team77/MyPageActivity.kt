@@ -3,12 +3,10 @@ package com.example.team77
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.example.team77.member.RebaseActivity
 import com.example.team77.member.SearchActivity
 import kotlin.random.Random
 
