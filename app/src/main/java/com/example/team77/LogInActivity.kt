@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.team77.member.DB
 import java.util.regex.Pattern
 
 class LogInActivity : BaseActivity() {
@@ -33,12 +34,15 @@ class LogInActivity : BaseActivity() {
             val pattern: Pattern = Patterns.EMAIL_ADDRESS
             val pattern2 = Pattern.compile(pwPattern)
             val matcher = pattern2.matcher(signPass)
+
             if (emailId.isNotEmpty() && signPass.isNotEmpty() && pattern.matcher(emailId).matches() && matcher.matches()) {
-
-
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-
+                val db = DB.getInstance(this, "your_email_name_here")
+                if (db.checkIdExist(emailId)) {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    showtoast("존재하지 않는 계정입니다.")
+                }
             } else {
                 showtoast("입력되지 않은 정보가 있습니다.")
             }
