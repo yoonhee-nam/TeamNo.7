@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
                 intent.putExtra("dataFromSignUpId",signUpId)
                 intent.putExtra("dataFromSignUpPass",signUpPassValue)
                 startActivity(intent)
+                overridePendingTransition(R.anim.right_fade_in,R.anim.right_fade_out)
             }
         }
     }

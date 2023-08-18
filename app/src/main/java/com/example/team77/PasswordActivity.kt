@@ -36,7 +36,7 @@ class PasswordActivity : BaseActivity() {
                 val pw1 = signUp2Id.text.toString()
                 val pw2 = editable.toString()
                 val pattern = Pattern.compile(pwPattern)
-                var matcher = pattern.matcher(pw1)
+                val matcher = pattern.matcher(pw1)
 
                 if (matcher.matches()){
                     textView6.text = "안전한 비밀번호입니다."
@@ -99,6 +99,7 @@ class PasswordActivity : BaseActivity() {
                 intent.putExtra("dataFromSignUpPass", signUpPassValue)
                 intent.putExtra("dataFromSignUpId",signUpId)
                 signUpPass.launch(intent) // 이 부분을 삭제하지 않음
+                overridePendingTransition(R.anim.right_fade_in,R.anim.right_fade_out)
             } else {
                 showtoast("비밀번호를 다시 입력해 주세요.")
             }

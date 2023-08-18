@@ -4,11 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import java.util.regex.Pattern
 
 class LogInActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +26,20 @@ class LogInActivity : BaseActivity() {
 
         val btn1 = findViewById<Button>(R.id.btnLogin)
         btn1.setOnClickListener {
-            val signInId = idText.text.toString()
-            val signPass = passText.text.toString()
 
-            if (signInId.isNotEmpty() && signPass.isNotEmpty()) {
+            val pwPattern = "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&.])[A-Za-z$@$!%*#?&.]{8,20}\$"
+            val emailId = idText.text.toString()
+            val signPass = passText.text.toString()
+            val pattern: Pattern = Patterns.EMAIL_ADDRESS
+            val pattern2 = Pattern.compile(pwPattern)
+            val matcher = pattern2.matcher(signPass)
+            if (emailId.isNotEmpty() && signPass.isNotEmpty() && pattern.matcher(emailId).matches() && matcher.matches()) {
+
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+
+                overridePendingTransition(R.anim.up_fade_in,R.anim.up_fade_out)
 
             } else {
                 showtoast(getString(R.string.toast_noinform_text))
@@ -42,6 +51,8 @@ class LogInActivity : BaseActivity() {
         btn2.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+
+            overridePendingTransition(R.anim.down_faid_in,R.anim.down_fade_out)
         }
 
         val btngoogle = findViewById<ConstraintLayout>(R.id.btngoogle)

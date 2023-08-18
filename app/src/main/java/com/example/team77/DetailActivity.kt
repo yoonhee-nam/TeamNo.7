@@ -18,18 +18,21 @@ class DetailActivity : BaseActivity() {
         mainbt.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.left_fade_in,R.anim.up_fade_out)
         }
 
         val loginbt = findViewById<Button>(R.id.loginbutton)
         loginbt.setOnClickListener{
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.down_faid_in,R.anim.down_fade_out)
         }
 
         val mypagebt = findViewById<Button>(R.id.mypagebutton)
         mypagebt.setOnClickListener{
             val intent = Intent(this, MyPageActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.left_fade_in,R.anim.up_fade_out)
         }
 
         val image = findViewById<ImageView>(R.id.imageView)
