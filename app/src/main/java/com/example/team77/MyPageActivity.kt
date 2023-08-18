@@ -22,6 +22,9 @@ class MyPageActivity : AppCompatActivity() {
         "코딩 중 ..", "사랑", "돈벌자!", "행복", "반짝반짝"
     )
 
+    val currentCount = 100
+
+
     var todayCount = 0
     lateinit var count: TextView // 지연초기화
 
@@ -125,6 +128,11 @@ class MyPageActivity : AppCompatActivity() {
 
 
 
+//메인에서 좋아요 버튼 클릭 시 like 1증가
+        val count2 = findViewById<TextView>(R.id.like_count)
+        val likeCount = intent.getIntExtra("AddLikeCount",0)
+        val text = currentCount + likeCount
+        count2.text = text.toString()
 
     }
 }
