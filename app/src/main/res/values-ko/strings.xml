@@ -20,7 +20,7 @@
     <string name="id_ment_text">아이디로 사용할 이메일 주소를 입력해주세요.</string>
     <string name="seven_text">7조는 뭘로하조?</string>
     <string name="my_page_text">MY PAGE 이동</string>
-    <string name="todaynumber">10</string>
+    <string name="todaynumber">0</string>
     <string name="toast_noinform_text">입력되지 않은 정보가 있습니다.</string>
     <string name="toast_wc">★환영합니다!★</string>
     <string name="toast_wcto_text">싸이월드에 오신걸 환영합니다.</string>

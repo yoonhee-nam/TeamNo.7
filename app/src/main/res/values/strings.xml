@@ -20,7 +20,7 @@
     <string name="id_ment_text">Please enter an email address \n to use as your ID.</string>
     <string name="seven_text">7조는 뭘로하조?</string>
     <string name="my_page_text">Go to MY PAGE</string>
-    <string name="todaynumber">10</string>
+    <string name="todaynumber">0</string>
     <string name="toast_noinform_text">There is information you have not entered.</string>
     <string name="toast_wc">★Welcome!★</string>
     <string name="toast_wcto_text">Welcome to Cyworld.</string>
