@@ -86,6 +86,8 @@ class SignUpActivity : AppCompatActivity() {
                 intent.putExtra("dataFromSignUpId",signUpId)
                 emailId.launch(intent)
                 startActivity(intent)
+
+                overridePendingTransition(R.anim.right_fade_in,R.anim.right_fade_out)
             } else {
                 Toast.makeText(this, "이메일을 다시 입력해 주세요", Toast.LENGTH_SHORT).show()
             }
