@@ -25,7 +25,8 @@
     <string name="toast_wc">★Welcome!★</string>
     <string name="toast_wcto_text">Welcome to Cyworld.</string>
     <string name="toast_youcan">Multiply your possibilities with coding. \n Sparta Coding Club</string>
-    <string name="toast_try">" Please re-enter your email."</string>
+    <string name="toast_try">Please re-enter your email.</string>
+    <string name="toast_pass_text">Repeat Password</string>
 
 
 </resources>

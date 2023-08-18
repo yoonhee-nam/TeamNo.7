@@ -50,6 +50,7 @@ class SearchActivity : AppCompatActivity() {
 
             val modInfo = dbHelper.search(email)
             textViewinfo.text = modInfo
+
             val message = "수정되었습니다."
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             finish()

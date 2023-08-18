@@ -101,7 +101,7 @@ class PasswordActivity : BaseActivity() {
                 signUpPass.launch(intent) // 이 부분을 삭제하지 않음
                 overridePendingTransition(R.anim.right_fade_in,R.anim.right_fade_out)
             } else {
-                showtoast("비밀번호를 다시 입력해 주세요.")
+                showtoast(getString(R.string.toast_pass_text))
             }
         }
 
