@@ -48,11 +48,6 @@ class SignUpActivity : AppCompatActivity() {
                 if (pattern.matcher(email).matches()) {
                     textView5.text = "정상적인 이메일입니다."
                     textView5.setTextColor(Color.WHITE)
-
-                    val mem = Member(sign_up_id.text.toString().trim())
-
-                    val dbHelper = DB.getInstance(this@SignUpActivity, "member.db")
-                    dbHelper.insert(mem)
                     btnNextToPass.setBackgroundColor(Color.parseColor("#FF5722"))
                     btnNextToPass.isEnabled = true
 
@@ -81,6 +76,11 @@ class SignUpActivity : AppCompatActivity() {
             val signUpId = sign_up_id.text.toString()
 
             if (signUpId.isNotEmpty()) {
+
+
+                val mem = Member(sign_up_id.text.toString().trim())
+                val dbHelper = DB.getInstance(this, "member.db")
+                dbHelper.insert(mem)
 
                 val intent = Intent(this, PasswordActivity:: class.java)
                 intent.putExtra("dataFromSignUpId",signUpId)

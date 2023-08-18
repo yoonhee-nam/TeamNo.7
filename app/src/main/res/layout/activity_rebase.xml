@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="0.656" />
 
     <Button
-        android:id="@+id/mod_Btn2"
+        android:id="@+id/deleteBtn"
         android:layout_width="126dp"
         android:layout_height="72dp"
         android:text="삭제"

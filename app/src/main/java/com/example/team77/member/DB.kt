@@ -17,7 +17,6 @@ class DB(context:Context, emailname:String):SQLiteOpenHelper(context,emailname,n
             }
             return daterbase!!
         }
-
     }
 
 

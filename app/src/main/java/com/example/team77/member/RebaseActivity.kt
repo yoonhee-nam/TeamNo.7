@@ -13,10 +13,10 @@ class RebaseActivity : AppCompatActivity() {
 
         val editTxtmodname = findViewById<EditText>(R.id.editTextTextPersonName2)
         val mod_Btn = findViewById<Button>(R.id.mod_Btn)
-        val dbHelper = DB.getInstance(this,"member.db")
-        val result = dbHelper.search(email)
+        val deleteBtn = findViewById<Button>(R.id.deleteBtn)
 
-        editTxtmodname.text = result
+
+
 
         mod_Btn.setOnClickListener {
 
@@ -25,8 +25,13 @@ class RebaseActivity : AppCompatActivity() {
             val dbHelper = DB.getInstance(this,"member.db",)
             dbHelper.rebase(email)
 
-            val modInfo = dbHelper.rebase(email)
-            editTxtmodname.text =modInfo
+            val modInfo = dbHelper.search(email)
+            editTxtmodname.setText(modInfo)
+        }
+        deleteBtn.setOnClickListener {
+            val name = editTxtmodname.text.toString().trim()
+            val dbHelper = DB.getInstance(this,"member.db",)
+            dbHelper.delete(name)
         }
     }
 }

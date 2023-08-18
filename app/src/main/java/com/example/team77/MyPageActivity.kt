@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.team77.member.RebaseActivity
+import com.example.team77.member.SearchActivity
 import kotlin.random.Random
 
 class MyPageActivity : AppCompatActivity() {
@@ -44,7 +45,9 @@ class MyPageActivity : AppCompatActivity() {
 
         val setting = findViewById<Button>(R.id.btnsetting)
         setting.setOnClickListener {
-            intent = Intent(this, RebaseActivity:: class.java)
+
+
+            intent = Intent(this, SearchActivity:: class.java)
             startActivity(intent)
         }
 
