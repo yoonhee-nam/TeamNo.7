@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded"
+        tools:context=".MainActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/play"
+            android:layout_width="27dp"
+            android:layout_height="24dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/play"
+            app:layout_constraintBottom_toTopOf="@+id/line_top5"
+            app:layout_constraintStart_toEndOf="@+id/before"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/next"
+            android:layout_width="27dp"
+            android:layout_height="24dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/next"
+            app:layout_constraintBottom_toTopOf="@+id/line_top5"
+            app:layout_constraintStart_toEndOf="@+id/pause"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2"
+            app:layout_constraintVertical_bias="0.514" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/before"
+            android:layout_width="27dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="250dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/before"
+            app:layout_constraintBottom_toTopOf="@+id/line_top5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2"
+            app:layout_constraintVertical_bias="0.514" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/pause"
+            android:layout_width="27dp"
+            android:layout_height="24dp"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pause"
+            app:layout_constraintBottom_toTopOf="@+id/line_top5"
+            app:layout_constraintStart_toEndOf="@+id/play"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2"
+            app:layout_constraintVertical_bias="0.514" />
+
+        <View
+            android:id="@+id/line_top5"
+            android:layout_width="1000px"
+            android:layout_height="5px"
+            android:layout_marginTop="60dp"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.451"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="166dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="none"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="7조 퀸ㅋΓ 소ズlLI"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/team_text3" />
+
+        <kr.co.prnd.readmore.ReadMoreTextView
+            android:id="@+id/team_text4"
+            android:layout_width="277dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:textColor="#A6A6A6"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:readMoreColor="@android:color/holo_blue_light"
+            app:readMoreMaxLine="2"
+            app:readMoreText="...더보기" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:srcCompat="@drawable/five" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_one2"
+            app:srcCompat="@drawable/four" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="158dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="none"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="7조 간Zi 윤ㅎi"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/team_one2"
+            app:layout_constraintTop_toBottomOf="@+id/team_text" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="156dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="none"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="7조 얼ㅉ6 주Zl"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/team_text2" />
+
+        <kr.co.prnd.readmore.ReadMoreTextView
+            android:id="@+id/team_text3"
+            android:layout_width="275dp"
+            android:layout_height="64dp"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:textColor="#A6A6A6"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toBottomOf="@+id/textView19"
+            app:readMoreColor="@android:color/holo_blue_light"
+            app:readMoreMaxLine="2"
+            app:readMoreText="...더보기" />
+
+
+        <kr.co.prnd.readmore.ReadMoreTextView
+            android:id="@+id/team_text2"
+            android:layout_width="255dp"
+            android:layout_height="66dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:textColor="#A6A6A6"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/team_one2"
+            app:layout_constraintTop_toBottomOf="@+id/textView18"
+            app:readMoreColor="@android:color/holo_blue_light"
+            app:readMoreMaxLine="2"
+            app:readMoreText="...더보기" />
+
+        <ImageView
+            android:id="@+id/team_one2"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/team_one"
+            app:srcCompat="@drawable/three" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="157dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:ellipsize="none"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="7조 Zi존 수야ㄴi"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/team_one"
+            app:layout_constraintTop_toBottomOf="@+id/line_top3" />
+
+        <kr.co.prnd.readmore.ReadMoreTextView
+            android:id="@+id/team_text"
+            android:layout_width="259dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:textColor="#A6A6A6"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/team_one"
+            app:layout_constraintTop_toBottomOf="@+id/textView17"
+            app:readMoreColor="@android:color/holo_blue_light"
+            app:readMoreMaxLine="2"
+            app:readMoreText="...더보기" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/neodgm"
+            android:text="ズl존 7조 미니룸"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top5" />
+
+        <TextView
+            android:id="@+id/today_icon_text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/neodgm"
+            android:text="Comments"
+            android:textColor="#6BBED3"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top3" />
+
+        <View
+            android:id="@+id/line_top3"
+            android:layout_width="1000px"
+            android:layout_height="5px"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/miniroom" />
+
+        <ImageView
+            android:id="@+id/miniroompng"
+            android:layout_width="364dp"
+            android:layout_height="171dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/miniroom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_icon_text2" />
+
+        <Button
+            android:id="@+id/miniroom"
+            android:layout_width="364dp"
+            android:layout_height="171dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/button"
+            android:fontFamily="@font/neodgm"
+            android:text="미니룸 들어가기"
+            android:textColor="#070707"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_icon_text2" />
+
+        <TextView
+            android:id="@+id/today_icon_text2"
+            android:layout_width="84dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/neodgm"
+            android:text="Mini Room"
+            android:textColor="#6BBED3"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top5" />
+
+        <TextView
+            android:id="@+id/today_icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="Today is ..."
+            android:textColor="#6BBED3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+
+        <TextView
+            android:id="@+id/like_count2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="100"
+            android:textColor="#A6A6A6"
+            app:layout_constraintStart_toEndOf="@+id/like_text2"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text" />
+
+        <TextView
+            android:id="@+id/like_text2"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="일촌"
+            android:textColor="#6BBED3"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/like_count"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="100"
+            android:textColor="#989696"
+            app:layout_constraintStart_toEndOf="@+id/like_text"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text" />
+
+        <TextView
+            android:id="@+id/like_text"
+            android:layout_width="30dp"
+            android:layout_height="12dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="like"
+            android:textColor="#6BBED3"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/icon_text"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text" />
+
+        <TextView
+            android:id="@+id/icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="코딩 중.."
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="29dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toEndOf="@+id/today_icon_text"
+            app:layout_constraintTop_toBottomOf="@+id/introduce_text"
+            app:srcCompat="@drawable/computer" />
+
+        <View
+            android:id="@+id/line_top2"
+            android:layout_width="1000px"
+            android:layout_height="5px"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.636"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+        <TextView
+            android:id="@+id/introduce_text"
+            android:layout_width="223dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/neodgm"
+            android:text="최강 ズl존 7조ㄱr ㄴrㄱr신⊂ト ㅋㅋ 길을 ㉥ㅣ켜ㄹΓ 코딩 캡짱 재밌⊂ト   ๑˃̶͈̀Ⱉ˂̶͈́๑  일촌 받ㅇr요 ~"
+            android:textColor="#A6A6A6"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/name_text" />
+
+        <TextView
+            android:id="@+id/name_text"
+            android:layout_width="107dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/neodgm"
+            android:text="Oi퓨zl호6"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/today_text" />
+
+        <TextView
+            android:id="@+id/maximum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/neodgm"
+            android:text="ㅣ 999"
+            android:textColor="#A6A6A6"
+            app:layout_constraintStart_toEndOf="@+id/count"
+            app:layout_constraintTop_toBottomOf="@+id/line_top" />
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/neodgm"
+            android:text="0"
+            android:textColor="#FF9800"
+            app:layout_constraintStart_toEndOf="@+id/today_text"
+            app:layout_constraintTop_toBottomOf="@+id/line_top" />
+
+        <TextView
+            android:id="@+id/today_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/neodgm"
+            android:text="To day"
+            android:textColor="#A6A6A6"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/line_top" />
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="92dp"
+            android:layout_height="94dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top"
+            app:srcCompat="@drawable/one" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/neodgm"
+            android:text="사이좋은 사람들, 싸이월드"
+            android:textColor="#6BBED3"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/line_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line_top"
+            android:layout_width="1000px"
+            android:layout_height="5px"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="30dp"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/team_one"
+            android:layout_width="67dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/today_icon_text3"
+            app:srcCompat="@drawable/two" />
+
+
+        <TextView
+            android:id="@+id/bgm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/neodgm"
+            android:text="BGM"
+            android:textColor="#6BBED3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2" />
+
+        <TextView
+            android:id="@+id/bgmtitle"
+            android:layout_width="213dp"
+            android:layout_height="31dp"
+            android:layout_marginTop="23dp"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center"
+            android:text="NCT DREAM - CANDY"
+            app:layout_constraintEnd_toStartOf="@+id/before"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_top2" />
+
+        <ImageView
+            android:id="@+id/btnsetting"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cog_wheel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
