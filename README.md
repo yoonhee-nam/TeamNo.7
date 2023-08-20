@@ -1,5 +1,5 @@
 # TeamNo.7
-팀원 : 남윤희 임주리 
+팀원 : 남윤희 임주리 남소진 황수연 이주용
 깃허브 : https://github.com/yoonhee-nam/TeamNo.7
 팀노션 : https://teamsparta.notion.site/7-ed265b56330b4aaa9549b0e00fbcea1a
 
