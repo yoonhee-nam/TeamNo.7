@@ -109,7 +109,7 @@ class DB(context: Context, emailname: String) : SQLiteOpenHelper(context, emailn
     }
 }
 
-###Member.kt
+### Member.kt
 email정보를 추가할 때 Member 클래스의 객체를 생성하고 이메일 정보를 넣어 초기화한 다음, 
 DB 클래스의 insert() 메서드를 사용하여 데이터베이스에 회원 정보를 추가합니다.
 
@@ -216,7 +216,7 @@ class SearchActivity : AppCompatActivity() {
     }
 }
 
-###BaseActivity.kt 
+### BaseActivity.kt 
 
 
 import android.os.Bundle
@@ -245,7 +245,7 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 }
 
-###DetailActivity.kt
+### DetailActivity.kt
 
 
 import android.content.Intent
@@ -295,7 +295,7 @@ class DetailActivity : BaseActivity() {
     }
 }
 
-###DoneActivity.kt
+### DoneActivity.kt
 
 import android.content.Intent
 import android.os.Bundle
@@ -404,7 +404,7 @@ class LogInActivity : BaseActivity() {
     }
 }
 
-MainActivity.kt
+### MainActivity.kt
 
 import android.content.Intent
 import android.os.Bundle
@@ -456,7 +456,7 @@ class MainActivity : BaseActivity() {
     }
 }
 
-MyPageActivity.kt
+### MyPageActivity.kt
 
 import android.content.Intent
 import android.media.MediaPlayer
@@ -609,7 +609,7 @@ class MyPageActivity : BaseActivity() {
     }
 }
 
-PasswordActivity.kt
+### PasswordActivity.kt
 
 import android.app.Activity
 import android.content.Intent
@@ -719,7 +719,7 @@ class PasswordActivity : BaseActivity() {
     }
 }
 
-SignUpActivity.kt
+### SignUpActivity.kt
 
 import android.content.Context
 import android.content.Intent
@@ -904,8 +904,8 @@ class SignUpActivity : BaseActivity() {
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
-##layout
-###activity_done
+## layout
+### activity_done
 
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
