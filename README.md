@@ -426,13 +426,13 @@ class LogInActivity : BaseActivity() {
 ```
 
 ### MainActivity.kt
-## 1.로그아웃 버튼 
+#### 1.로그아웃 버튼 
 로그아웃 버튼 클릭시 LogInActivyty로 이동 intent
 
-## 2. MYPAGE로 이동 버튼
+#### 2. MYPAGE로 이동 버튼
 MYPAGE로 이동 버튼 클릭시 MyPageActivyty로 이동 intet
 
-## 3. like
+#### 3. like
 Like 클릭시 MyPage Like 101로, 취소시 100으로 구현 
 
 ```
