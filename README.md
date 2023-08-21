@@ -460,6 +460,30 @@ class MainActivity : BaseActivity() {
 
 ### MyPageActivity.kt
 
+## 주요 기능
+
+### 1. 비쥐엠 (BGM) 기능
+
+MyPage 앱은 사용자가 자신의 마이페이지를 방문할 때 BGM을 재생할 수 있는 기능을 제공합니다. 재생과 다음곡,이전곡 등 다양한 곡을 감상하며 마이페이지를 더욱 특별하게 꾸밀 수 있습니다.
+
+### 2. 아이콘 랜덤 변경
+
+마이페이지의 아이콘은 매번 새로운 아이콘으로 랜덤으로 변경됩니다. 이를 통해 사용자의 마이페이지가 매번 다르게 보이며, 더욱 다채로워집니다.
+
+### 3. 더보기 기능
+
+마이페이지에는 더보기 기능이 구현되어 있습니다. 사용자는 마이페이지에서 자신의 이야기를 더 자세히 나눌 수 있고, 2줄 이상 적혀있을시 더보기 기능이 동작됩니다.
+
+### 4. TOday 기능
+
+MainPage 에서 MyPage 로 넘어오면 Today 수가 증가합니다. 이를 통해 몇명의 방문객이 마이페이지를 방문했는지 확인하실 수 있습니다.
+
+
+### 5. 좋아요 기능
+
+MainPage 에서 좋아요 버튼을 누르면 MyPage 에서 받아옵니다. 좋아요를 통해 사용자 간의 소통을 원활하게 할 수 있습니다.
+
+
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -569,6 +593,7 @@ class MyPageActivity : BaseActivity() {
         nextButton = findViewById(R.id.next)
         beforeButton = findViewById(R.id.before)
 
+// play stop before next  버튼 구현 
 
         playButton.setOnClickListener {
             mediaPlayer?.release() //release previous media players
