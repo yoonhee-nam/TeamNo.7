@@ -1241,6 +1241,11 @@ class SignUpActivity : BaseActivity() {
 ```
 
 ### activity_main.xml
+#### 1. HorizontalScrollView(좌우 스크롤뷰)
+좌우 스크롤뷰로 오늘의 추천친구 구현
+
+#### 2. NestedScrollView(상하 스크롤뷰)
+ScrollView와 같지만 중첩되어 오류가 있을경우 사용, UI수정과정 중 ScrollView로 사용가능하나, 시간상 관계로 바꾸지 않음
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -1249,187 +1254,550 @@ class SignUpActivity : BaseActivity() {
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foregroundTint="@color/white"
-    tools:context=".LogInActivity">
-
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/top_layout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@color/orange"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="@string/login_text"
-            android:textColor="@color/white"
-            android:textSize="27sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:fontFamily="@font/neodgm"
+            android:text="싸이월드"
+            android:textColor="@color/blue2"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="59dp"
-            android:layout_height="61dp"
+        <TextView
+            android:id="@+id/txtLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/neodgm"
+            android:text="로그아웃"
+            android:textColor="#FFAB91"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="330dp"
-        android:layout_height="62dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:hint="@string/email_text"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <EditText
-        android:id="@+id/logInpass"
-        android:layout_width="330dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:ems="10"
-        android:hint="@string/password_text"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail" />
-
-    <Button
-        android:id="@+id/btnLogin"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/middle_layout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/login_text"
-        android:textSize="21sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logInpass" />
-
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="30dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="30dp"
-        android:backgroundTint="@color/orange"
-        android:text="@string/sign_up_text"
-        android:textSize="21sp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/minicap"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_recomend">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btngoogle"
-        android:layout_width="165dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/googlelogin"
-        app:layout_constraintEnd_toStartOf="@+id/btnNaver"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignUp">
+        <ImageView-->
+            android:id="@+id/cr_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            app:srcCompat="@drawable/run_gif" />
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="110dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="5dp"
-            android:gravity="center"
-            android:text="@string/google_text"
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/neodgm"
+            android:text="@string/seven_text"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMypage"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/button"
+            android:backgroundTint="#FEFAFD"
+            android:fontFamily="@font/neodgm"
+            android:gravity="center|bottom"
+            android:text="@string/my_page_text"
+            android:textColor="@color/black"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="35dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/google" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/btnNaver"
-        android:layout_width="165dp"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginStart="10dp"
-        android:background="@drawable/googlelogin"
-        app:layout_constraintBottom_toBottomOf="@+id/btngoogle"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btngoogle"
-        app:layout_constraintTop_toTopOf="@+id/btngoogle">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/middle_layout">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="110dp"
-            android:layout_height="0dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginTop="3dp"
-            android:gravity="center"
-            android:text="@string/naver_text"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <LinearLayout
+            android:id="@+id/layout_like"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_bg_white"
+            android:onClick="like_count"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/naver" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/neodgm"
+                android:text="LIKE"
+                android:textColor="@color/blue2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/heart"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/like" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="70dp"
+            android:background="@drawable/main_bg_white"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            tools:layout_editor_absoluteY="0dp">
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
+                android:text="TODAY"
+                android:textColor="@color/blue2"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/neodgm"
+                android:text="@string/todaynumber"
+                android:textColor="@color/background"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="16dp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
-        android:layout_height="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/neodgm"
+        android:text="오늘의 추천 친구"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/people" />
+        app:layout_constraintTop_toBottomOf="@+id/top_layout" />
 
+    <HorizontalScrollView
+        android:id="@+id/layout_recomend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        tools:layout_editor_absoluteX="52dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recomend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:layout_editor_absoluteX="-16dp">
+
+            <ImageView
+                android:id="@+id/dohyun"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/dohyun" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/neodgm"
+                android:text="이도현"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/dohyun"
+                app:layout_constraintStart_toStartOf="@+id/dohyun"
+                app:layout_constraintTop_toBottomOf="@+id/dohyun" />
+
+            <ImageView
+                android:id="@+id/jisu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/dohyun"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/jisoo" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/neodgm"
+                android:text="지수"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/jisu"
+                app:layout_constraintStart_toStartOf="@+id/jisu"
+                app:layout_constraintTop_toBottomOf="@+id/jisu" />
+
+            <ImageView
+                android:id="@+id/iu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/jisu"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/iu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/neodgm"
+                android:text="아이유"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/iu"
+                app:layout_constraintStart_toStartOf="@+id/iu"
+                app:layout_constraintTop_toBottomOf="@+id/iu" />
+
+            <ImageView
+                android:id="@+id/jichangwook"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/iu"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/jichangwook" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/neodgm"
+                android:text="지창욱"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/jichangwook"
+                app:layout_constraintStart_toStartOf="@+id/jichangwook"
+                app:layout_constraintTop_toBottomOf="@+id/jichangwook" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/main_img_cycle"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toEndOf="@+id/jichangwook"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/hyunjin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/neodgm"
+                android:text="서현진"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/imageView7"
+                app:layout_constraintStart_toStartOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/neodgm"
+        android:text="일촌"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+    </TextView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="335dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/main_bg_orange"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="471dp">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/img_edge"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img1" />
+
+            <TextView
+                android:id="@+id/name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/neodgm"
+                android:text="이름 : 남윤희"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mbti_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/neodgm"
+                android:text="MBTI : ENFP"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img1"
+                app:layout_constraintTop_toBottomOf="@+id/name_1" />
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/img_edge"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img1"
+                app:srcCompat="@drawable/img2" />
+
+            <TextView
+                android:id="@+id/name_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/neodgm"
+                android:text="이름 : 임주리"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img2"
+                app:layout_constraintTop_toBottomOf="@+id/mbti_1" />
+
+            <TextView
+                android:id="@+id/mbti_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/neodgm"
+                android:text="MBTI : ENFJ"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img1"
+                app:layout_constraintTop_toBottomOf="@+id/name_2" />
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/img_edge"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img2"
+                app:srcCompat="@drawable/img3" />
+
+            <TextView
+                android:id="@+id/name_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/neodgm"
+                android:text="이름 : 황수연"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img3"
+                app:layout_constraintTop_toBottomOf="@+id/mbti_2" />
+
+            <TextView
+                android:id="@+id/mbti_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/neodgm"
+                android:text="MBTI : ENFP"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img3"
+                app:layout_constraintTop_toBottomOf="@+id/name_3" />
+
+            <ImageView
+                android:id="@+id/img4"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/img_edge"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img3"
+                app:srcCompat="@drawable/img4" />
+
+            <TextView
+                android:id="@+id/name_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/neodgm"
+                android:text="이름 : 남소진"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/img4"
+                app:layout_constraintTop_toBottomOf="@+id/mbti_3" />
+
+            <TextView
+                android:id="@+id/mbti_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/neodgm"
+                android:text="MBTI : INFP"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img4"
+                app:layout_constraintTop_toBottomOf="@+id/name_4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
