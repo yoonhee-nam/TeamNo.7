@@ -19,6 +19,7 @@ search로 특정 이메일을 검색하고 delete에서 입력된 이메일을 �
 checkIdExist에서 입력된 이메일이 저장소에 있는지 확인하는 함수입니다.
 
 
+```
 package com.example.team77.member
 
 import android.content.Context
@@ -112,11 +113,13 @@ class DB(context: Context, emailname: String) : SQLiteOpenHelper(context, emailn
         return cursor.count > 0
     }
 }
+```
 
 ### Member.kt
 email정보를 추가할 때 Member 클래스의 객체를 생성하고 이메일 정보를 넣어 초기화한 다음, 
 DB 클래스의 insert() 메서드를 사용하여 데이터베이스에 회원 정보를 추가합니다.
 
+```
 package com.example.team77.member
 
 class Member(var email: String){
@@ -219,7 +222,9 @@ class SearchActivity : AppCompatActivity() {
 }
     }
 }
+```
 
+```
 ### BaseActivity.kt 
 
 
@@ -248,10 +253,11 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 }
+```
 
 ### DetailActivity.kt
 
-
+```
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -298,9 +304,12 @@ class DetailActivity : BaseActivity() {
         image.setImageDrawable(ResourcesCompat.getDrawable(resources, im, null))
     }
 }
+```
 
 ### DoneActivity.kt
+회원가입 완료 창으로, 버튼을 누르면  intent.putExtra로 아이디와 패스워드를 각 저장소에 담아 LogInActivity로 넘깁니다.
 
+```
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -327,9 +336,16 @@ import androidx.appcompat.app.AppCompatActivity
             }
         }
     }
+```
 
-    LoginActivity.kt
+### LoginActivity.kt
 
+intent.getStringExtra로 id와password를 받아옵니다. val pwPattern = "^(?=.*[A-Za-z])(?=.*[$@$!%*#?&.])[A-Za-z$@$!%*#?&.]{8,20}\$"로 비밀번호 정규식을 이용하여 제한을 걸었고,
+이메일도 pattern: Pattern = Patterns.EMAIL_ADDRESS를 통해 이메일 형식만 기재할 수 있도록 했습니다. val db = DB.getInstance(this, "your_email_name_here")로 DB를 받아오고
+if (db.checkIdExist(emailId) 으로 존재여부를 판단하빈다.
+구글 및 네이버 로그인 버튼 클릭 리스너로 각 로그인 화면으로 이동하는 것을  Intent.ACTION_VIEW로 이동 만 구현했습니다.
+
+```
     import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -407,9 +423,11 @@ class LogInActivity : BaseActivity() {
         }
     }
 }
+```
 
 ### MainActivity.kt
 
+```
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -459,6 +477,7 @@ class MainActivity : BaseActivity() {
         })
     }
 }
+```
 
 ### MyPageActivity.kt
 
@@ -485,7 +504,7 @@ MainPage 에서 MyPage 로 넘어오면 Today 수가 증가합니다. 이를 통
 
 MainPage 에서 좋아요 버튼을 누르면 MyPage 에서 받아옵니다. 좋아요를 통해 사용자 간의 소통을 원활하게 할 수 있습니다.
 
-
+```
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -637,9 +656,15 @@ class MyPageActivity : BaseActivity() {
 
     }
 }
+```
 
 ### PasswordActivity.kt
+addTextChangedListener = EditText가 변결 될 때마다 호출되는 리스너를 추가하고
+TextWatcher로 비밀번호 형식 및 일치 여부를 확인하여 상황에 따라 UI를 변경합니다.
+beforeTextChanged,onTextChanged,afterTextChanged 세가지 메서드를 포함 각각 변겅 전, 중 후 상태를 변경할 수 있습니다.
+matcher함수로 비밀번호를 검사합니다.식을 검증합니다. 입력된 비밀번호와 비교하여 형식이 맞고 일치하면, 해당 결과를 TextView에 표시하고, 버튼의 활성화 상태 및 배경색을 변경합니다.
 
+```
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
@@ -747,9 +772,12 @@ class PasswordActivity : BaseActivity() {
 
     }
 }
+```
 
 ### SignUpActivity.kt
 
+
+```
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -843,9 +871,11 @@ class SignUpActivity : BaseActivity() {
         }
     }
 }
+```
 
 ### layout-land -> detail_activity.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -932,10 +962,12 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ## layout
 ### activity_done
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -997,9 +1029,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### activity_login.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -1189,9 +1223,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### activity_main.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -1381,9 +1417,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### activity_my_page.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1938,9 +1976,11 @@ class SignUpActivity : BaseActivity() {
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
+```
 
 ### activity_password.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -2495,9 +2535,11 @@ class SignUpActivity : BaseActivity() {
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
+```
 
 ### activity_search.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -2591,9 +2633,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### activity_signup.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -2679,9 +2723,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### detail_activity.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -2768,9 +2814,11 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```
 
 ### toast_layout.xml
 
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -2803,4 +2851,4 @@ class SignUpActivity : BaseActivity() {
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
+```
