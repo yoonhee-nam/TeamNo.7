@@ -257,6 +257,10 @@ abstract class BaseActivity : AppCompatActivity() {
 
 ### DetailActivity.kt
 
+가로/세로 모드 UI 구현했습니다.
+화면이 바뀔 때마다 캐릭터 이미지도 변경이 되도록 랜덤값을 주었습니다.
+my page, main page, login page로 이동할 수 있도록 버튼의 기능을 주었습니다.
+
 ```
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -882,6 +886,9 @@ class SignUpActivity : BaseActivity() {
 ```
 
 ### layout-land -> detail_activity.xml
+
+가로/세로 모드 UI 구현 중 가로 모드에 해당되는 xml 파일입니다.
+
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
