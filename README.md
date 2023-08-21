@@ -8,8 +8,8 @@
 ![image](https://github.com/yoonhee-nam/TeamNo.7/assets/126261375/07aec1fb-2994-4cb2-99a0-c87e09d36e48)
 
 # 파일 목록
-##Package[member]
-###DB.kt
+## Package[member]
+### DB.kt
 
 DB클래스, emailname을 String자료형으로 받고, SQLiteOpenHelper 클래스 import후 상속받아 데이터베이스를 생성합니다.
 onCreate에서 MEMEBER라는 테이블을 생성한뒤 insert에서 입력한 email정보를 받아와 데이터베이스에 저장합니다.
